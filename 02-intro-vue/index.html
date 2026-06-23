@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="myApp">
+    <h1>Batman quotes {{ totalQuotes }}</h1>
+    <input 
+        type="text" 
+        @keypress.enter="addQuote"
+        placeholder="Add quote"
+        v-model="newMessage"
+    >
+
+    <button @click="toggleAuthor">Toggle author</button>
+    <!-- <button @click="addQuote">Add quote</button> -->
+    <hr>
+
+     <!-- Mostrando las quotes usando v-for, podemos desestructurar el objeto ({author, quote}) -->
+    <ul>
+        <li v-for="(quote, index) in quotes">
+            <span>{{index + 1}} - {{ quote.quote }}</span>
+            <blockquote v-if="showAuthor">{{ quote.author }}</blockquote>
+            <!-- Podemos usar v-show, solo que este añade display none al elemento y el if lo elimina del DOM -->
+        </li>
+    </ul>
+    
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+html, body{
+    margin: 0;
+    background-color: grey;
+}
+
+button{
+    background-color: wheat;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}

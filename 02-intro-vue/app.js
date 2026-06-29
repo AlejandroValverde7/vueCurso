@@ -25,7 +25,7 @@ const app = createApp({
         };
 
         const addQuote = () => {
-            quotes.value.unshift({ quote: newMessage.value, author: 'Fernando Herrera' });
+            quotes.value.unshift({ quote: newMessage.value, author: 'Alejandro Valverde' });
             newMessage.value = "";
         }
 

@@ -11,15 +11,19 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, ref } from 'vue';
+import { useCounter } from '../composables/useCounter';
 
-// Declaramos las props que recibimos desde el componente padre
-const props = defineProps({
-    value: {type: Number, required: true}
-})
+const { counter, squareCounter} = useCounter(9);
 
-const counter = ref(props.value);
-const squareCounter = computed(() => counter.value * counter.value);
+// import { computed, ref } from 'vue';
+
+// // Declaramos las props que recibimos desde el componente padre
+// const props = defineProps({
+//     value: {type: Number, required: true}
+// })
+
+// const counter = ref(props.value);
+// const squareCounter = computed(() => counter.value * counter.value);
 
 </script>
 

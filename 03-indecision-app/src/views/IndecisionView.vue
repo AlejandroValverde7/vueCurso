@@ -10,7 +10,7 @@
     <ChatMessages :messages="messages" />
 
     <!-- Message box -->
-    <MessageBox />
+    <MessageBox @send-message="onMessage"/>
   </div>
 </template>
 
@@ -38,4 +38,15 @@ const messages = ref<ChatMessage[]>([
         image: 'https://yesno.wtf/assets/no/28-e19b6f658f621f7c5980a33f8249a65d.gif'
     }
 ]);
+
+//Añadimos un metodo para escuchar el evento que emitimos desde el componente MessageBox.vue
+// y añadirlo a nuestro array de mensajes
+const onMessage = (text: string) => {
+    messages.value.push({
+      id: new Date().getTime(),
+      itsMine: true,
+      message: text
+    })
+}
+
 </script>
